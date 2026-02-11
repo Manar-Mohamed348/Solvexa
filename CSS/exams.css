@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --primary-color: rgba(29, 129, 111, 0.95);
+    --secondary-color: white;
+    --main-font: "Cairo", sans-serif;
+    --main-weight: 600;
+}
+
+body {
+    background-color: #E9E9E9;
+}
+
+/* start Header styles */
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100vh;
+}
+
+.container header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 180px;
+    background-color: var(--primary-color);
+    padding: 20px 0;
+}
+
+.container header nav img:first-child {
+    width: clamp(100px, 15vw, 163px);
+    height: clamp(100px, 15vw, 163px);
+    margin: 20px clamp(15px, 3vw, 44px) 0px clamp(15px, 2vw, 24px);
+}
+
+.container header nav .links {
+    flex: 1;
+    min-width: 300px;
+    height: auto;
+    min-height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: clamp(15px, 2vw, 30px);
+    border: 1px solid var(--secondary-color);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    padding: clamp(15px, 2.5vw, 33px);
+    margin-top: 20px;
+}
+
+.container header nav .links .search {
+    position: relative;
+    flex: 1;
+    min-width: 180px;
+    max-width: 400px;
+}
+
+.container header nav .links .search .fa-solid.fa-magnifying-glass {
+    position: absolute;
+    top: 50%;
+    left: clamp(15px, 2vw, 25px);
+    transform: translateY(-50%);
+    z-index: 1;
+    color: #9C9C9C;
+    font-size: clamp(18px, 2vw, 24px);
+    pointer-events: none;
+}
+
+.container header nav .links .search input {
+    width: 100%;
+    height: clamp(45px, 5vw, 60px);
+    font-family: var(--main-font);
+    font-optical-sizing: auto;
+    font-weight: var(--main-weight);
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    color: #9C9C9C;
+    text-decoration: none;
+    font-size: clamp(16px, 1.8vw, 30px);
+    display: flex;
+    text-align: right;
+    padding: 5px clamp(50px, 6vw, 70px) 5px clamp(15px, 2vw, 25px);
+    border-radius: 50px;
+    border: none;
+
+}
+
+.container header nav .links .divider {
+    display: flex;
+    gap: clamp(20px, 3vw, 42px);
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+.container header nav .links .divider a {
+    font-family: var(--main-font);
+    font-optical-sizing: auto;
+    font-weight: var(--main-weight);
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: clamp(20px, 2.5vw, 36px);
+    position: relative;
+}
+
+.container header nav .links .divider a:nth-child(1)::before {
+    content: "";
+    position: absolute;
+    top: clamp(-35px, -3.5vw, -42px);
+    left: 0;
+    width: 100%;
+    height: clamp(8px, 1vw, 11px);
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+}
+
+.container header nav .links img {
+    width: clamp(60px, 7vw, 84px);
+    height: clamp(60px, 7vw, 84px);
+    cursor: pointer;
+}
+
+/* end Header styles */
+
+/* start main styles */
+
+main input {
+    width: 80%;
+    height: 84px;
+    background-color: transparent;
+    border: 3px solid #02735E;
+    border-radius: 20px;
+    display: flex;
+    justify-self: center;
+    margin: 60px 0px;
+    font-family: "Tajawal", sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    text-align: end;
+}
+
+main input:focus {
+    color: #02735E;
+}
+
+main input::placeholder {
+    color: #02735E;
+    font-family: "Tajawal", sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    text-align: end;
+    margin-right: 10px;
+}
+
+main .exam {
+    width: 90%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    justify-self: center;
+    height: 104px;
+    background-color: white;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: #000 0px 0px 4px;
+    margin-bottom: 17px;
+}
+
+main .exam h1 {
+    font-family: "Tajawal", sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    margin-right: 50px;
+}
+
+main .exam .details {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+main .exam .details .examDetails {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    background-color: #32AB61;
+    border-radius: 50px;
+    padding: 5px 10px 5px 10px;
+    gap: 10px;
+}
+
+main .exam .details .examDetails .grade {
+    background: conic-gradient(#32AB61 0% 85%,
+            #D9D9D9 85% 100%);
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-shrink: 0;
+}
+
+/* White ring border */
+main .exam .details .examDetails .grade::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-sizing: border-box;
+}
+
+main .exam .details .examDetails .grade span {
+    position: relative;
+    font-weight: bold;
+    z-index: 2;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #000;
+}
+
+main .exam .details .examDetails .passed {
+    font-family: var(--main-font);
+    font-weight: var(--main-weight);
+    font-size: 32px;
+    color: white;
+}
+
+/* For different grade statuses - you can add these classes */
+main .exam .details .examDetails.excellent {
+    background-color: #32AB61;
+    /* Green */
+}
+
+main .exam .details .examDetails.good {
+    background-color: #FFC107;
+    /* Yellow */
+}
+
+main .exam .details .examDetails.average {
+    background-color: #FF9800;
+    /* Orange */
+}
+
+main .exam .details .examDetails.failed {
+    background-color: #F44336;
+    /* Red */
+}
+
+main .exam .details a {
+    font-family: "Tajawal", sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #000;
+    margin-left: 50px;
+}
+
+/* end main styles */
