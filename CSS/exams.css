@@ -16,8 +16,8 @@ body {
 .container {
     width: 100%;
     margin: 0 auto;
-    padding: 0 20px;
-    height: 100vh;
+    padding: 0 clamp(10px, 2vw, 20px);
+    min-height: 100vh;
 }
 
 .container header nav {
@@ -86,7 +86,6 @@ body {
     padding: 5px clamp(50px, 6vw, 70px) 5px clamp(15px, 2vw, 25px);
     border-radius: 50px;
     border: none;
-
 }
 
 .container header nav .links .divider {
@@ -129,61 +128,73 @@ body {
 
 /* start main styles */
 
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 clamp(10px, 2vw, 20px);
+}
+
 main input {
-    width: 80%;
-    height: 84px;
+    width: clamp(280px, 85%, 90%);
+    max-width: 1200px;
+    height: clamp(60px, 8vw, 84px);
     background-color: transparent;
     border: 3px solid #02735E;
     border-radius: 20px;
-    display: flex;
-    justify-self: center;
-    margin: 60px 0px;
+    margin: clamp(30px, 5vw, 60px) 0;
     font-family: "Tajawal", sans-serif;
-    font-size: 32px;
+    font-size: clamp(18px, 2.8vw, 32px);
     font-weight: 400;
     text-align: end;
+    padding: 0 clamp(15px, 2vw, 25px);
 }
 
 main input:focus {
     color: #02735E;
+    outline: none;
 }
 
 main input::placeholder {
     color: #02735E;
     font-family: "Tajawal", sans-serif;
-    font-size: 32px;
+    font-size: clamp(18px, 2.8vw, 32px);
     font-weight: 400;
     text-align: end;
-    margin-right: 10px;
 }
 
 main .exam {
+    width: clamp(280px, 92%, 90%);
     width: 90%;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    justify-self: center;
-    height: 104px;
+    min-height: clamp(80px, 10vw, 104px);
     background-color: white;
     align-items: center;
     border-radius: 10px;
-    box-shadow: #000 0px 0px 4px;
-    margin-bottom: 17px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px;
+    margin-bottom: clamp(12px, 1.5vw, 17px);
+    padding: clamp(10px, 1.5vw, 15px) clamp(15px, 2vw, 20px);
 }
 
 main .exam h1 {
     font-family: "Tajawal", sans-serif;
-    font-size: 36px;
+    font-size: clamp(20px, 3vw, 36px);
     font-weight: 500;
-    margin-right: 50px;
+    margin-right: clamp(15px, 3vw, 50px);
+    flex: 1;
+    text-align: right;
 }
 
 main .exam .details {
     display: flex;
     flex-direction: row-reverse;
-    gap: 30px;
+    gap: clamp(15px, 2.5vw, 30px);
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 main .exam .details .examDetails {
@@ -192,16 +203,16 @@ main .exam .details .examDetails {
     align-items: center;
     background-color: #32AB61;
     border-radius: 50px;
-    padding: 5px 10px 5px 10px;
-    gap: 10px;
+    padding: clamp(4px, 0.5vw, 5px) clamp(8px, 1vw, 10px);
+    gap: clamp(8px, 1vw, 10px);
+    white-space: nowrap;
 }
 
 main .exam .details .examDetails .grade {
-    background: conic-gradient(#32AB61 0% 85%,
-            #D9D9D9 85% 100%);
+    background: conic-gradient(#32AB61 0% 85%, #D9D9D9 85% 100%);
     border-radius: 50%;
-    width: 70px;
-    height: 70px;
+    width: clamp(55px, 6vw, 70px);
+    height: clamp(55px, 6vw, 70px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -216,7 +227,7 @@ main .exam .details .examDetails .grade::before {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 4px solid white;
+    border: clamp(3px, 0.4vw, 4px) solid white;
     box-sizing: border-box;
 }
 
@@ -225,50 +236,209 @@ main .exam .details .examDetails .grade span {
     font-weight: bold;
     z-index: 2;
     background-color: white;
-    width: 50px;
-    height: 50px;
+    width: clamp(38px, 4.5vw, 50px);
+    height: clamp(38px, 4.5vw, 50px);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 18px;
+    font-size: clamp(14px, 1.6vw, 18px);
     color: #000;
 }
 
 main .exam .details .examDetails .passed {
     font-family: var(--main-font);
     font-weight: var(--main-weight);
-    font-size: 32px;
+    font-size: clamp(20px, 2.8vw, 32px);
     color: white;
+    padding: 0 clamp(8px, 1vw, 12px);
 }
 
-/* For different grade statuses - you can add these classes */
+/* For different grade statuses */
 main .exam .details .examDetails.excellent {
     background-color: #32AB61;
-    /* Green */
 }
 
 main .exam .details .examDetails.good {
     background-color: #FFC107;
-    /* Yellow */
 }
 
 main .exam .details .examDetails.average {
     background-color: #FF9800;
-    /* Orange */
 }
 
 main .exam .details .examDetails.failed {
     background-color: #F44336;
-    /* Red */
 }
 
 main .exam .details a {
     font-family: "Tajawal", sans-serif;
-    font-size: 32px;
+    font-size: clamp(18px, 2.8vw, 32px);
     font-weight: 400;
     color: #000;
-    margin-left: 50px;
+    margin-left: clamp(15px, 3vw, 50px);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+main .exam .details a:hover {
+    text-decoration: underline;
 }
 
 /* end main styles */
+
+/* ===== RESPONSIVE MEDIA QUERIES ===== */
+
+/* Tablet and below - 992px */
+@media screen and (max-width: 992px) {
+    .container header nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 0;
+    }
+
+    .container header nav img:first-child {
+        margin: 10px auto;
+    }
+
+    .container header nav .links {
+        width: 95%;
+        border-radius: 50px;
+        margin-top: 15px;
+    }
+
+    main .exam {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    main .exam h1 {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    main .exam .details {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+
+/* Mobile - 768px */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .container header nav .links {
+        width: 98%;
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .container header nav .links .search {
+        width: 100%;
+        max-width: none;
+        order: -1;
+    }
+
+    .container header nav .links .divider {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .container header nav .links .divider a:nth-child(1)::before {
+        display: none;
+    }
+
+    main input {
+        width: 95%;
+    }
+
+    main .exam {
+        width: 95%;
+        padding: 15px;
+    }
+
+    main .exam .details {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    main .exam .details a {
+        margin-left: 0;
+        order: -1;
+        width: 100%;
+        text-align: right;
+    }
+}
+
+/* Small Mobile - 576px */
+@media screen and (max-width: 576px) {
+    main .exam {
+        padding: 12px;
+    }
+
+    main .exam h1 {
+        font-size: 18px;
+    }
+
+    main .exam .details .examDetails {
+        padding: 4px 8px;
+        gap: 6px;
+    }
+
+    main .exam .details .examDetails .grade {
+        width: 50px;
+        height: 50px;
+    }
+
+    main .exam .details .examDetails .grade span {
+        width: 35px;
+        height: 35px;
+        font-size: 12px;
+    }
+
+    main .exam .details .examDetails .passed {
+        font-size: 18px;
+        padding: 0 6px;
+    }
+
+    main .exam .details a {
+        font-size: 16px;
+    }
+}
+
+/* Extra Small Mobile - 360px */
+@media screen and (max-width: 360px) {
+    .container {
+        padding: 0 5px;
+    }
+
+    main {
+        padding: 0 5px;
+    }
+
+    main input {
+        width: 98%;
+        height: 55px;
+        font-size: 16px;
+        padding: 0 12px;
+    }
+
+    main .exam {
+        width: 98%;
+        padding: 10px;
+    }
+
+    main .exam h1 {
+        font-size: 16px;
+        margin-right: 0;
+    }
+
+    main .exam .details {
+        gap: 10px;
+    }
+}
